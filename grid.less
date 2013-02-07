@@ -1,0 +1,297 @@
+/*
+* -- 2mlab x 12 colonne e portato in dotless - 29/01/2013) --
+* 
+*
+* -- Basato su: --- 
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+*
+* 
+*
+* 6/20/2012
+*/
+
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+/* Column Width */
+.column_width(@x: 1, @column-width: 60, @inner_thickness: 0) {
+  @total-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @total-width) - @inner_thickness;
+}
+
+/* Column */
+.column(@x: 1) {
+	display: inline;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	.column_width(1);
+}
+
+/* Offsets */
+.offset(@offset: 1, @column-width: 60) {
+	@total-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+	padding-left: (@gutter-width+@column-width)*@offset + @total-width*((@gutter-width*.5)/@total-width) - (@gutter-width*.5);
+}
+
+
+/* #Base 960 Grid
+================================================== */
+
+	.wrapper { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+	.column_1 , .column_2, .column_3, .column_4, .column_5, .column_6, 
+	.column_7, .column_8, .column_9, .column_10, .column_11, .column_12,
+	.one-third, .two-thirds {
+		.column(1);
+	}
+	.row { margin-bottom: 20px; }
+
+	/* Base Grid */
+	.column_1 { .column_width(1); }
+	.column_2 { .column_width(2); }
+	.column_3 { .column_width(3); }
+	.column_4 { .column_width(4); }
+	.column_5 { .column_width(5); }
+	.column_6 { .column_width(6); }
+	.column_7 { .column_width(7); }
+	.column_8 { .column_width(8); }
+	.column_9 { .column_width(9); }
+	.column_10 { .column_width(10); }
+	.column_11 { .column_width(11); }
+	.column_12 { .column_width(12); }
+
+	.one-third { width: 300px; }
+	.two-thirds { width: 620px; }
+
+	/* Offset */
+	.offset_0 { .offset(0); }
+	.offset_1 { .offset(1); }
+	.offset_2 { .offset(2); }
+	.offset_3 { .offset(3); }
+	.offset_4 { .offset(4); }
+	.offset_5 { .offset(5); }
+	.offset_6 { .offset(6); }
+	.offset_7 { .offset(7); }
+	.offset_8 { .offset(8); }
+	.offset_9 { .offset(9); }
+	.offset_10 { .offset(10); }
+	.offset_11 { .offset(11); }
+	.offset_12 { .offset(12); }
+
+	/* Nested Column Classes */
+	.alpha { margin-left:0; }
+	.omega { margin-right:0; }
+				
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+	@tablet_portrait_column_width: 44px;
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+
+        .wrapper { width: 768px; }
+        .column_1 , .column_2, .column_3, .column_4, .column_5, .column_6, 
+		.column_7, .column_8, .column_9, .column_10, .column_11, .column_12,
+		.one-third, .two-thirds { 
+			margin-left: 10px; margin-right: 10px;
+        }
+
+		/* Base Grid */
+		.column_1 { .column_width(1, @tablet_portrait_column_width); }
+		.column_2 { .column_width(2, @tablet_portrait_column_width); }
+		.column_3 { .column_width(3, @tablet_portrait_column_width); }
+		.column_4 { .column_width(4, @tablet_portrait_column_width); }
+		.column_5 { .column_width(5, @tablet_portrait_column_width); }
+		.column_6 { .column_width(6, @tablet_portrait_column_width); }
+		.column_7 { .column_width(7, @tablet_portrait_column_width); }
+		.column_8 { .column_width(8, @tablet_portrait_column_width); }
+		.column_9 { .column_width(9, @tablet_portrait_column_width); }
+		.column_10 { .column_width(10, @tablet_portrait_column_width); }
+		.column_11 { .column_width(11, @tablet_portrait_column_width); }
+		.column_12 { .column_width(12, @tablet_portrait_column_width); }
+
+		.one-third { width: 236px; }
+		.two-thirds { width: 492px; }
+
+		/* Offset */
+		.offset_0 { .offset(0, @tablet_portrait_column_width); }
+		.offset_1 { .offset(1, @tablet_portrait_column_width); }
+		.offset_2 { .offset(2, @tablet_portrait_column_width); }
+		.offset_3 { .offset(3, @tablet_portrait_column_width); }
+		.offset_4 { .offset(4, @tablet_portrait_column_width); }
+		.offset_5 { .offset(5, @tablet_portrait_column_width); }
+		.offset_6 { .offset(6, @tablet_portrait_column_width); }
+		.offset_7 { .offset(7, @tablet_portrait_column_width); }
+		.offset_8 { .offset(8, @tablet_portrait_column_width); }
+		.offset_9 { .offset(9, @tablet_portrait_column_width); }
+		.offset_10 { .offset(10, @tablet_portrait_column_width); }
+		.offset_11 { .offset(11, @tablet_portrait_column_width); }
+		.offset_12 { .offset(12, @tablet_portrait_column_width); }
+
+		/* Nested Column Classes */
+        .alpha, .alpha               { margin-left: 0; margin-right: 10px; }
+        .omega, .omega               { margin-right: 0; margin-left: 10px; }
+        .alpha.omega                 { margin-left: 0; margin-right: 0; }
+
+    }
+
+	
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        .wrapper { width: 300px; }
+
+		/* Base Grid */
+        .column_1 , .column_2, .column_3, .column_4, .column_5, .column_6, 
+		.column_7, .column_8, .column_9, .column_10, .column_11, .column_12, 
+		.one-third, .two-thirds { 
+			margin: 0; 
+			width: 300px;
+        }
+		
+        /* Offsets */
+		.offset_0, .offset_1, .offset_2, .offset_3, .offset_4, .offset_5, .offset_6, .offset_7, .offset_8, .offset_9, .offset_10, .offset_11, .offset_12 {
+			padding-left:0;
+		}
+    }
+
+	
+/*  #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .wrapper { width: 420px; }
+
+		/* Base Grid */
+        .column_1 , .column_2, .column_3, .column_4, .column_5, .column_6, 
+		.column_7, .column_8, .column_9, .column_10, .column_11, .column_12,
+		.one-third, .two-thirds { 
+			margin: 0;
+			width: 420px;
+        }
+    }
+
+
+/* #Clearing
+================================================== */
+
+    /* Self Clearing Goodness */
+    .container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+    /* Use clearfix class on parent to clear nested columns,
+    or wrap each row of columns in a <div class="row"> */
+    .clearfix:before,
+    .clearfix:after,
+    .row:before,
+    .row:after {
+      content: '\0020';
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0; }
+    .row:after,
+    .clearfix:after {
+      clear: both; }
+    .row,
+    .clearfix {
+      zoom: 1; }
+
+    /* You can also use a <br class="clear" /> to clear columns */
+    .clear {
+      clear: both;
+      display: block;
+      overflow: hidden;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+
+
+
+/* 
+   Setta il width dell'elemento a quello della colonna contenitore (es: column_4). 
+   Nel caso in cui l'elemento da dimensionare abbia del padding e/o dei bordi (es: gli input di un form),
+   è possibile passare la somma di questi come parametro "@element_inner_thickness". 
+   In questo modo @element_inner_thickness verrà sottratto dalla larghezza da applicare all'elemento (altrimenti sborderebbe dalla colonna).
+
+	Parametri:
+		@selector	Selettore degli elementi a cui applicare il fit 
+			esempio:	~"input, select, textarea"
+
+		@element_inner_thickness	Somma dei padding e dei bordi orizzontali dell'elemento da fittare.
+			esempio:	((14px + 1px) * 2)
+
+
+	Esempio di utilizzo (x fittare gli elementi di un form):
+	
+		@form_item_horizontal_padding: 14px;
+		@form_item_horizontal_border: 1px;
+		@form_item_inner_thickness: (@form_item_horizontal_padding + @form_item_horizontal_border) * 2;
+
+		.fit_element_width(~"input, select, textarea", @form_item_inner_thickness);
+*/
+.fit_element_width(@selector, @element_inner_thickness) {
+
+	/* #Base 960 Grid (Desktop) */
+	.column_1 { @{selector} { .column_width(1, @column-width, @element_inner_thickness); } }
+	.column_2 { @{selector} { .column_width(2, @column-width, @element_inner_thickness); } }
+	.column_3 { @{selector} { .column_width(3, @column-width, @element_inner_thickness); } }		
+	.column_4 { @{selector} { .column_width(4, @column-width, @element_inner_thickness); } }
+	.column_5 { @{selector} { .column_width(5, @column-width, @element_inner_thickness); } }
+	.column_6 { @{selector} { .column_width(6, @column-width, @element_inner_thickness); } }
+	.column_7 { @{selector} { .column_width(7, @column-width, @element_inner_thickness); } }
+	.column_8 { @{selector} { .column_width(8, @column-width, @element_inner_thickness); } }
+	.column_9 { @{selector} { .column_width(9, @column-width, @element_inner_thickness); } }
+	.column_10 { @{selector} { .column_width(10, @column-width, @element_inner_thickness); } }
+	.column_11 { @{selector} { .column_width(11, @column-width, @element_inner_thickness); } }
+	.column_12 { @{selector} { .column_width(12, @column-width, @element_inner_thickness); } }
+
+	/* #Tablet (Portrait) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+		.column_1 { @{selector} { .column_width(1, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_2 { @{selector} { .column_width(2, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_3 { @{selector} { .column_width(3, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_4 { @{selector} { .column_width(4, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_5 { @{selector} { .column_width(5, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_6 { @{selector} { .column_width(6, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_7 { @{selector} { .column_width(7, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_8 { @{selector} { .column_width(8, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_9 { @{selector} { .column_width(9, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_10 { @{selector} { .column_width(10, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_11 { @{selector} { .column_width(11, @tablet_portrait_column_width, @element_inner_thickness); } }
+		.column_12 { @{selector} { .column_width(12, @tablet_portrait_column_width, @element_inner_thickness); } }
+	}
+
+	/* #Mobile (Landscape) */
+	@media only screen and (max-width: 767px) {        
+		.column_1, .column_2, .column_3, .column_4, .column_5, .column_6,
+		.column_7, .column_8, .column_9, .column_10, .column_11, .column_12,
+		.one-third, .two-thirds {
+			@{selector} { width: (300px - @element_inner_thickness); }
+		}
+	}
+
+	/* #Mobile (Landscape) */	
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .column_1 , .column_2, .column_3, .column_4, .column_5, .column_6, 
+		.column_7, .column_8, .column_9, .column_10, .column_11, .column_12,
+		.one-third, .two-thirds {
+			@{selector} { width: (420px - @element_inner_thickness); }
+        }
+    }
+
+}
+
