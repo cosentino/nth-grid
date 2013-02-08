@@ -222,8 +222,8 @@
    In questo modo @element_inner_thickness verrà sottratto dalla larghezza da applicare all'elemento (altrimenti sborderebbe dalla colonna).
 
 	Parametri:
-		@selector	Selettore degli elementi a cui applicare il fit 
-			esempio:	~"input, select, textarea"
+		@selector	Selettore dell'elemento a cui applicare il fit 
+			esempio:	~"input"
 
 		@element_inner_thickness	Somma dei padding e dei bordi orizzontali dell'elemento da fittare.
 			esempio:	((14px + 1px) * 2)
@@ -235,7 +235,8 @@
 		@form_item_horizontal_border: 1px;
 		@form_item_inner_thickness: (@form_item_horizontal_padding + @form_item_horizontal_border) * 2;
 
-		.fit_element_width(~"input, select, textarea", @form_item_inner_thickness);
+		.fit_element_width(~"input", @form_item_inner_thickness);
+
 */
 .fit_element_width(@selector, @element_inner_thickness) {
 
